@@ -19,10 +19,22 @@
         {
             return $this->id;
         }
+
         public function getDescription(): string
         {
             return $this->description;
         }
+
+        private $done;
+
+        public function is_done() {
+            return $this->done;
+        }
+
+        public function set_done($done) {
+            $this->done = $done;
+        }
+
     }
 
 ?>

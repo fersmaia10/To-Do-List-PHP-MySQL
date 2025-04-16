@@ -16,6 +16,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <?php 
@@ -37,15 +38,24 @@
         <?php foreach ($tasks as $task): ?>
     <!--aqui, é utilizado o método getDescription() para pegar o valor do objeto description, que é o que será exibido na tela -->
         <ul>
-            <li><?= $task->getDescription() ?> 
+            <li>
+                <span class="task_item"><?= $task->is_done() ? 'task_done' : ''?><?= $task->getDescription() ?></span> 
                 <form action="delete_task.php" method="post">
                     <input type="hidden" name="id" value ="<?= $task->getId() ?>">
                     <input type="submit" value="Excluir">
                 </form>
+
+                <?php if (!$task->is_done()): ?>
+                <form action="done_task.php" method="post">
+                    <input type="submit" class="button_done" value="Concluir" onclick="done(this)">
+                </form>
+                <?php endif; ?>
+
                 <a href="edit_task.php?id=<?= $task->getId()?>">Editar</a>
             </li>
         </ul>
         <?php endforeach;?>
     </div>
+    <script src="app.js"></script>
 </body>
 </html>
