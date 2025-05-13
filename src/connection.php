@@ -1,3 +1,2 @@
 <?php 
-    $pdo = new PDO('mysql:host=localhost;dbname=to_do_list', 'fernando', 'minhasenha');
-?>
+    $pdo = new PDO('mysql:host=mysql;dbname=app', 'app', 'app');

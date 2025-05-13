@@ -6,7 +6,7 @@ Lista de afazeres afim de entregar uma melhor organização para o dia a dia dos
 * Editar uma tarefa;
 * Excluir uma tarefa;
 
-## Tecnologias utilizadas (até o momento):
+## Tecnologias utilizadas:
 * PHP versão 8.3.6
 * MySQL
 * HTML
@@ -15,16 +15,16 @@ Lista de afazeres afim de entregar uma melhor organização para o dia a dia dos
 Desenvolver habilidades para criar conexão entre uma página web e banco de dados criando uma aplicação funcional.
 
 ## Página Inicial
-![Index](img/index.png)
+![Index](docs/img/index.png)
 
 ## Adicionar Tarefa
-![Adicionar](img/task.png)
+![Adicionar](docs/img/task.png)
 
 ## Editar Tarefa
-![Editar](img/edit-task.png)
+![Editar](docs/img/edit-task.png)
 
 ## Concluir Tarefa
-![Concluir](img/done-task.png)  
+![Concluir](docs/img/done-task.png)  
 
 
 ## Autor

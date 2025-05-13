@@ -1,16 +1,16 @@
 <?php
 require "src/connection.php";
 require "src/Model/Task.php";
-require "src/Repository/task_repository.php";
+require "src/Repository/TaskRepository.php";
 
-$task_repository = new task_repository($pdo);
+$TaskRepository = new TaskRepository($pdo);
 
 // Verifica se a requisição é POST e se o ID foi enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
     $id = (int)$_POST['id'];
 
     // Busca a tarefa
-    $task = $task_repository->select_one($id);
+    $task = $TaskRepository->select_one($id);
     if (!$task) {
         // Tarefa não encontrada — redireciona com erro
         header("Location: index.php?error=notfound");

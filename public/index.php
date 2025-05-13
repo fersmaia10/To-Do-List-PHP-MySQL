@@ -1,13 +1,10 @@
     <?php 
-        error_reporting(E_ALL);
-        ini_set('display_errors', 1);
+        require __DIR__ . "/../../src/connection.php";
+        require __DIR__ .  "/../../src/Model/Task.php";
+        require __DIR__ . "/../../src/Repository/TaskRepository.php";
 
-        require "src/connection.php";
-        require "src/Model/Task.php";
-        require "src/Repository/task_repository.php";
-
-        $task_repository = new task_repository($pdo);
-        $tasks = $task_repository->tasks_item();
+        $TaskRepository = new TaskRepository($pdo);
+        $tasks = $TaskRepository->tasks_item();
     ?>
 
 <!DOCTYPE html>
@@ -22,19 +19,9 @@
 </head>
 <body>
     <h1 class="task_title">Lista de Tarefas</h1>
-
-    <?php 
-        if (isset($_POST['add'])) 
-        {
-            $task = new Task(null, $_POST['add']);
-
-            $task_repository->insert($task);
-            header("Location: index.php");
-        }
-    ?>
     <form method="post" id="form_task">
         <div class="add_task">
-            <input name= "add" type="search" id="entry_task" placeholder="insira uma tarefa">
+            <input name= "task" type="text" id="entry_task" placeholder="insira uma tarefa">
             <input type="submit" id="add_button" class="add_button" value="Adicionar" onclick="verify_task()">
         </div>
     </form>       

@@ -1,5 +1,5 @@
 <?php 
-    class task_repository
+    class TaskRepository
     {
         private PDO $pdo;
         public function __construct(PDO $pdo)

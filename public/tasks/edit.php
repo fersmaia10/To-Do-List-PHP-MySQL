@@ -5,20 +5,20 @@
 
     require 'src/connection.php';
     require 'src/Model/Task.php';
-    require 'src/Repository/task_repository.php';
+    require 'src/Repository/TaskRepository.php';
 
 
-    $task_repository = new task_repository($pdo);
+    $TaskRepository = new TaskRepository($pdo);
 
     if (isset($_POST['edit'])) {
         $task = new Task($_GET['id'], $_POST['description']);
-        $task_repository->update($task);
+        $TaskRepository->update($task);
         header('Location: index.php');
     } 
     
     else
     {
-        $task = $task_repository->select_one($_GET['id']);
+        $task = $TaskRepository->select_one($_GET['id']);
     }
 ?>
 
